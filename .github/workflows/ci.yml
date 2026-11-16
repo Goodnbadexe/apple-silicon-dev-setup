@@ -65,6 +65,6 @@ jobs:
             test -s "$f"
           done
           ./bootstrap.sh --dry-run
-          ./bootstrap.sh --dry-run --skip-brew --with-defaults
+          ./bootstrap.sh --dry-run --skip-brew --with-defaults --vault
           ./scripts/upgrade.sh --dry-run
           ./scripts/doctor.sh

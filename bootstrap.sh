@@ -3,9 +3,11 @@ set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BREW_PREFIX="/opt/homebrew"
+VAULT_URL="https://hamzahramli.gumroad.com/l/all-access-macos"
 DRY_RUN=false
 SKIP_BREW=false
 WITH_DEFAULTS=false
+OPEN_VAULT=false
 
 usage() {
   cat <<EOF
@@ -17,6 +19,7 @@ Options:
   --dry-run        Print actions without modifying the system
   --skip-brew      Skip Homebrew installation and Brewfile bundle
   --with-defaults  Apply opinionated macOS defaults after linking templates
+  --vault          Open the Gumroad macOS Toolkit Vault after setup
   -h, --help       Show this help message
 EOF
 }
@@ -43,6 +46,9 @@ while [ $# -gt 0 ]; do
       ;;
     --with-defaults)
       WITH_DEFAULTS=true
+      ;;
+    --vault)
+      OPEN_VAULT=true
       ;;
     -h|--help)
       usage
@@ -175,7 +181,13 @@ main() {
     apply_macos_defaults
   fi
 
+  if [ "$OPEN_VAULT" = true ]; then
+    log "Opening Gumroad macOS Toolkit Vault: ${VAULT_URL}"
+    run open "$VAULT_URL"
+  fi
+
   log "Setup complete. Restart your terminal or run 'source ~/.zshrc'."
+  log "Toolkit Vault (Gumroad): ${VAULT_URL}"
 }
 
 main

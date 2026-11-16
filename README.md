@@ -34,7 +34,20 @@ cd apple-silicon-dev-setup
 
 # Optionally include macOS developer defaults
 ./bootstrap.sh --with-defaults
+
+# Open the Gumroad macOS Toolkit Vault after setup
+./bootstrap.sh --vault
 ```
+
+## Free Core vs. Toolkit Vault (Gumroad)
+
+Everything in this repository is free and MIT-licensed. For ready-to-run cybersecurity, AI, and developer playbooks, pair it with the unified **Toolkit Vault** on Gumroad:
+
+| Tier | What You Get | Link |
+| :--- | :--- | :--- |
+| **Open-Source Core** | `bootstrap.sh`, `Brewfile`, `doctor.sh`, `upgrade.sh`, starter templates, CI | Free (this repo) |
+| **macOS All-Access Vault** | Unified paid Toolkit Vault bundle for macOS (`hamzahramli.gumroad.com`) | **[Get on Gumroad](https://hamzahramli.gumroad.com/l/all-access-macos)** |
+| **Interactive Vault Funnel** | Pick your track & OS with `LAUNCH50` offer on `goodnbad.info` | **[goodnbad.info/subscribe](https://www.goodnbad.info/subscribe)** |
 
 ## Customization
 

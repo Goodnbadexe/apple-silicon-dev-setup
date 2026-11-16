@@ -63,6 +63,13 @@ cd apple-silicon-dev-setup
         └── .zshrc
 ```
 
+## Support, Donations & Toolkit Vault
+
+This repository is free and open-source under the MIT License. If it saved you hours setting up your Mac:
+
+- **Donate / Sponsor**: Click the **Sponsor** button at the top of this repo or visit **[goodnbad.info](https://www.goodnbad.info)** / **[GitHub Sponsors](https://github.com/sponsors/Goodnbadexe)**.
+- **Pro Toolkits & Vault**: Explore paid cybersecurity, AI, and developer toolkits on **[goodnbad.info/subscribe](https://www.goodnbad.info/subscribe)** and **[hamzahramli.gumroad.com](https://hamzahramli.gumroad.com)**.
+
 ## License & Author
 
 Released under the [MIT License](LICENSE).  

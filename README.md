@@ -1,6 +1,6 @@
 # Apple Silicon Dev Setup
 
-> Maintained by **Hamzah Al-Ramli (`@Goodnbad.exe`)** · **[goodnbad.info](https://www.goodnbad.info)** · [![CI](https://github.com/Goodnbadexe/apple-silicon-dev-setup/actions/workflows/ci.yml/badge.svg)](https://github.com/Goodnbadexe/apple-silicon-dev-setup/actions/workflows/ci.yml)
+> Maintained by **Hamzah Al-Ramli (`@Goodnbad.exe`)** · **[goodnbad.info](https://www.goodnbad.info)** · [![CI](https://github.com/Goodnbadexe/apple-silicon-dev-setup/actions/workflows/ci.yml/badge.svg)](https://github.com/Goodnbadexe/apple-silicon-dev-setup/actions/workflows/ci.yml) [![Gumroad](https://img.shields.io/badge/Gumroad-Toolkit%20Vault-FF90E8?logo=gumroad&logoColor=white)](https://hamzahramli.gumroad.com)
 
 A clean, opinionated, and idempotent bootstrapper for setting up an Apple Silicon (`arm64`) Mac for software development, security engineering, and AI workflows. Includes a curated `Brewfile`, starter shell/Git/SSH/editor templates, optional macOS developer defaults, an environment audit script (`doctor.sh`), and a GitHub Actions CI workflow running on `macos-latest`.
 
@@ -69,7 +69,10 @@ cd apple-silicon-dev-setup
 This repository is free and open-source under the MIT License. If it saved you hours setting up your Mac:
 
 - **Donate / Sponsor**: Click the **Sponsor** button at the top of this repo or visit **[goodnbad.info](https://www.goodnbad.info)** / **[GitHub Sponsors](https://github.com/sponsors/Goodnbadexe)**.
-- **Pro Toolkits & Vault**: Explore paid cybersecurity, AI, and developer toolkits on **[goodnbad.info/subscribe](https://www.goodnbad.info/subscribe)** and **[hamzahramli.gumroad.com](https://hamzahramli.gumroad.com)**.
+- **Pro Toolkits & Vault (Gumroad)**:
+  - **Storefront**: [hamzahramli.gumroad.com](https://hamzahramli.gumroad.com)
+  - **macOS All-Access Vault**: [hamzahramli.gumroad.com/l/all-access-macos](https://hamzahramli.gumroad.com/l/all-access-macos)
+  - **Interactive Vault Funnel**: [goodnbad.info/subscribe](https://www.goodnbad.info/subscribe)
 
 ## License & Author
 

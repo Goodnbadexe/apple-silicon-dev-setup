@@ -79,9 +79,9 @@ check_link "${REPO_DIR}/templates/ghostty/config" "${HOME}/.config/ghostty/confi
 if [ -d "${HOME}/.ssh" ]; then
   ssh_perm="$(stat -f '%Lp' "${HOME}/.ssh" 2>/dev/null || echo 'unknown')"
   if [ "$ssh_perm" = "700" ]; then
-    pass "~/.ssh permissions are 700"
+    pass "${HOME}/.ssh permissions are 700"
   else
-    warn "~/.ssh permissions are ${ssh_perm} (recommended: 700)"
+    warn "${HOME}/.ssh permissions are ${ssh_perm} (recommended: 700)"
   fi
 fi
 

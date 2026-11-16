@@ -1,6 +1,8 @@
 # Apple Silicon Dev Setup
 
-A clean, opinionated, and idempotent bootstrapper for setting up an Apple Silicon (`arm64`) Mac for software development. Includes a curated `Brewfile`, starter shell/Git/SSH templates, optional macOS developer defaults, and a GitHub Actions CI workflow running on `macos-latest`.
+> Maintained by **Hamzah Al-Ramli (`@Goodnbad.exe`)** · **[goodnbad.info](https://www.goodnbad.info)** · [![CI](https://github.com/Goodnbadexe/apple-silicon-dev-setup/actions/workflows/ci.yml/badge.svg)](https://github.com/Goodnbadexe/apple-silicon-dev-setup/actions/workflows/ci.yml)
+
+A clean, opinionated, and idempotent bootstrapper for setting up an Apple Silicon (`arm64`) Mac for software development, security engineering, and AI workflows. Includes a curated `Brewfile`, starter shell/Git/SSH/editor templates, optional macOS developer defaults, an environment audit script (`doctor.sh`), and a GitHub Actions CI workflow running on `macos-latest`.
 
 ## What's Included
 
@@ -61,6 +63,7 @@ cd apple-silicon-dev-setup
         └── .zshrc
 ```
 
-## License
+## License & Author
 
-Released under the [MIT License](LICENSE).
+Released under the [MIT License](LICENSE).  
+Built by **Hamzah Al-Ramli (`@Goodnbad.exe`)** — [goodnbad.info](https://www.goodnbad.info) · [GitHub](https://github.com/Goodnbadexe)

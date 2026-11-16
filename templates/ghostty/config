@@ -1,0 +1,7 @@
+# Ghostty terminal starter configuration for macOS
+
+font-size = 14
+macos-option-as-alt = true
+scrollback-limit = 10000
+copy-on-select = clipboard
+confirm-close-surface = false

@@ -140,6 +140,9 @@ install_templates() {
   link_template "${REPO_DIR}/templates/git/.gitconfig" "${HOME}/.gitconfig"
   link_template "${REPO_DIR}/templates/git/.gitignore_global" "${HOME}/.gitignore_global"
   link_template "${REPO_DIR}/templates/ssh/config" "${HOME}/.ssh/config"
+  link_template "${REPO_DIR}/templates/mise/config.toml" "${HOME}/.config/mise/config.toml"
+  link_template "${REPO_DIR}/templates/ghostty/config" "${HOME}/.config/ghostty/config"
+  link_template "${REPO_DIR}/templates/vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json"
 
   if [ -d "${HOME}/.ssh" ] && [ "$DRY_RUN" = false ]; then
     chmod 700 "${HOME}/.ssh"

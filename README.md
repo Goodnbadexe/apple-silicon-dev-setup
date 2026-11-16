@@ -10,6 +10,10 @@ A clean, opinionated, and idempotent bootstrapper for setting up an Apple Silico
   - `zsh/.zprofile` & `zsh/.zshrc` — Apple Silicon Homebrew initialization, clean `PATH`, Git-aware prompt, and `mise` / `fzf` / `zoxide` hooks.
   - `git/.gitconfig` & `git/.gitignore_global` — Sensible Git defaults (`main` default branch, `pull.rebase`, macOS Keychain / `gh` credential helpers).
   - `ssh/config` — macOS Keychain integration (`UseKeychain yes`, `AddKeysToAgent yes`).
+  - `mise/config.toml` — Global `mise` runtime defaults (`node`, `python`).
+  - `ghostty/config` — Starter Ghostty terminal configuration.
+  - `vscode/settings.json` & `vscode/extensions.txt` — Starter VS Code settings and recommended extensions.
+- **`scripts/doctor.sh`** — Full environment audit checking architecture, Xcode CLT, Homebrew, `Brewfile` status, template symlinks, `~/.ssh` permissions, and script syntax.
 - **`scripts/macos-defaults.sh`** — Optional, reversible macOS Finder, Dock, Keyboard, and Screenshot tweaks for developers.
 - **`.github/workflows/ci.yml`** — Automated validation on `macos-latest` (`bash -n`, `zsh -n`, `shellcheck`, `Brewfile` syntax check, and `bootstrap.sh --dry-run`).
 

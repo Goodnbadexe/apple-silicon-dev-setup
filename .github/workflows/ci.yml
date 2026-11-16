@@ -27,6 +27,7 @@ jobs:
           set -euo pipefail
           bash -n bootstrap.sh
           bash -n scripts/macos-defaults.sh
+          bash -n scripts/doctor.sh
           zsh -n templates/zsh/.zprofile
           zsh -n templates/zsh/.zshrc
 
@@ -36,7 +37,7 @@ jobs:
           if ! command -v shellcheck >/dev/null 2>&1; then
             brew install shellcheck
           fi
-          shellcheck bootstrap.sh scripts/macos-defaults.sh
+          shellcheck bootstrap.sh scripts/macos-defaults.sh scripts/doctor.sh
 
       - name: Validate Brewfile syntax
         run: |
@@ -55,8 +56,13 @@ jobs:
             templates/zsh/.zshrc \
             templates/git/.gitconfig \
             templates/git/.gitignore_global \
-            templates/ssh/config; do
+            templates/ssh/config \
+            templates/mise/config.toml \
+            templates/ghostty/config \
+            templates/vscode/settings.json \
+            templates/vscode/extensions.txt; do
             test -s "$f"
           done
           ./bootstrap.sh --dry-run
           ./bootstrap.sh --dry-run --skip-brew --with-defaults
+          ./scripts/doctor.sh

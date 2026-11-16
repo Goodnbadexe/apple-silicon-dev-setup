@@ -1,0 +1,35 @@
+name: Publish GitHub Package
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - Dockerfile
+      - .github/workflows/publish-package.yml
+      - bootstrap.sh
+      - scripts/**
+      - templates/**
+      - Brewfile
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    name: Publish container package to GHCR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Build and push package
+        run: |
+          IMAGE="ghcr.io/${{ github.repository_owner }}/apple-silicon-dev-setup"
+          IMAGE_LOWER="$(echo "$IMAGE" | tr '[:upper:]' '[:lower:]')"
+          docker build -t "${IMAGE_LOWER}:latest" -t "${IMAGE_LOWER}:${{ github.sha }}" .
+          docker push "${IMAGE_LOWER}:latest"
+          docker push "${IMAGE_LOWER}:${{ github.sha }}"

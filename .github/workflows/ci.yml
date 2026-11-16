@@ -15,7 +15,7 @@ jobs:
     name: Validate scripts, Brewfile, and templates (Apple Silicon)
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Check architecture and environment
         run: |

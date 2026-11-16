@@ -1,4 +1,4 @@
-FROM alpine:3.20
+FROM alpine:3.24
 
 LABEL org.opencontainers.image.title="apple-silicon-dev-setup" \
       org.opencontainers.image.description="Idempotent Apple Silicon (arm64) macOS developer setup, templates, and audit scripts" \

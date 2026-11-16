@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate scripts, Brewfile, and templates (Apple Silicon)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check architecture and environment
+        run: |
+          uname -a
+          sw_vers
+
+      - name: Check shell script syntax (bash & zsh)
+        run: |
+          set -euo pipefail
+          bash -n bootstrap.sh
+          bash -n scripts/macos-defaults.sh
+          zsh -n templates/zsh/.zprofile
+          zsh -n templates/zsh/.zshrc
+
+      - name: Lint shell scripts with shellcheck
+        run: |
+          set -euo pipefail
+          if ! command -v shellcheck >/dev/null 2>&1; then
+            brew install shellcheck
+          fi
+          shellcheck bootstrap.sh scripts/macos-defaults.sh
+
+      - name: Validate Brewfile syntax
+        run: |
+          set -euo pipefail
+          ruby -c Brewfile
+          brew bundle list --file=Brewfile
+
+      - name: Verify starter templates and dry-run bootstrap
+        run: |
+          set -euo pipefail
+          for f in \
+            LICENSE \
+            README.md \
+            Brewfile \
+            templates/zsh/.zprofile \
+            templates/zsh/.zshrc \
+            templates/git/.gitconfig \
+            templates/git/.gitignore_global \
+            templates/ssh/config; do
+            test -s "$f"
+          done
+          ./bootstrap.sh --dry-run
+          ./bootstrap.sh --dry-run --skip-brew --with-defaults

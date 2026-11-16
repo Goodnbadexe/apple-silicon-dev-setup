@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Local overrides & secrets
+*.local
+.env
+.env.*
+!.env.example
+
+# Backups created during local testing
+*.bak
+*.backup

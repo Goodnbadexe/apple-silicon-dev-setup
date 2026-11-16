@@ -28,6 +28,7 @@ jobs:
           bash -n bootstrap.sh
           bash -n scripts/macos-defaults.sh
           bash -n scripts/doctor.sh
+          bash -n scripts/upgrade.sh
           zsh -n templates/zsh/.zprofile
           zsh -n templates/zsh/.zshrc
 
@@ -37,7 +38,7 @@ jobs:
           if ! command -v shellcheck >/dev/null 2>&1; then
             brew install shellcheck
           fi
-          shellcheck bootstrap.sh scripts/macos-defaults.sh scripts/doctor.sh
+          shellcheck bootstrap.sh scripts/macos-defaults.sh scripts/doctor.sh scripts/upgrade.sh
 
       - name: Validate Brewfile syntax
         run: |
@@ -65,4 +66,5 @@ jobs:
           done
           ./bootstrap.sh --dry-run
           ./bootstrap.sh --dry-run --skip-brew --with-defaults
+          ./scripts/upgrade.sh --dry-run
           ./scripts/doctor.sh

@@ -16,6 +16,7 @@ A clean, opinionated, and idempotent bootstrapper for setting up an Apple Silico
   - `ghostty/config` — Starter Ghostty terminal configuration.
   - `vscode/settings.json` & `vscode/extensions.txt` — Starter VS Code settings and recommended extensions.
 - **`scripts/doctor.sh`** — Full environment audit checking architecture, Xcode CLT, Homebrew, `Brewfile` status, template symlinks, `~/.ssh` permissions, and script syntax.
+- **`scripts/upgrade.sh`** — One-command upgrade (`brew update/upgrade/cleanup`, `mise upgrade`, `gh extension upgrade --all`, followed by `doctor.sh`, with `--dry-run` support).
 - **`scripts/macos-defaults.sh`** — Optional, reversible macOS Finder, Dock, Keyboard, and Screenshot tweaks for developers.
 - **`.github/workflows/ci.yml`** — Automated validation on `macos-latest` (`bash -n`, `zsh -n`, `shellcheck`, `Brewfile` syntax check, and `bootstrap.sh --dry-run`).
 
